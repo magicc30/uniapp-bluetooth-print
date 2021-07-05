@@ -1,0 +1,29 @@
+.t-box{
+	display: flex;
+}
+.t-box-1{
+	flex:1;
+	width: 0;
+}
+.t-box-vertical{
+	display:flex;
+	align-items: center;
+}
+.t-box-center{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.t-box-between{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+/* 清除浮动 */
+.clearfix:after{
+  content: '';
+  display: block;
+  height:0;
+  clear:both;
+  visibility:hidden
+}

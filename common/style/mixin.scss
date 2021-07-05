@@ -1,0 +1,13 @@
+//文本溢出
+@mixin ellipsis($line-clamp: 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @if abs($line-clamp) > 1 {
+    // 要使得多行截取生效，display的值只能为-webkit-box
+    display: -webkit-box !important;
+    -webkit-line-clamp: $line-clamp;
+    flex-direction:column;
+  } @else {
+    white-space: nowrap;
+  }
+}
