@@ -53,15 +53,15 @@
 			}
 		},
 		props: {
-			state: {
+			state: {  //  显示/隐藏
 				type: Number,
 				default: 0
 			},
-			data: {
+			data: { //  打印数据
 				type: Object,
 				default: {}
 			},
-			printType:{
+			printType:{  // 打印类型
 				type:String,
 				default:'orderDetail'
 			}
@@ -73,6 +73,7 @@
 		watch: {
 			state(val) {
 				if (val == '1') {
+					//弹窗显示
 					console.log(this.data);
 					console.log(this.printType);
 					bluetooth = new Bluetooth()
@@ -150,6 +151,7 @@
 				}
 			},
 			getCharacteristics() {
+				// 获取蓝牙打印服务
 				var that = this
 				let {
 					serviceList: list, 
@@ -245,7 +247,7 @@
 					self.writeBLECharacteristicValue();
 				}, 500);
 			},
-			//写入控制命令
+			//写入控制命令  打印内容
 			async writeBLECharacteristicValue() {
 				let printerJobs = new PrinterJobs();
 				if(printType==='orderDetail'){
